@@ -1,26 +1,62 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #F2F3F4;
+  --foreground: #004D40;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+}
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/fonts/Adomania.otf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/fonts/Adomania Light.otf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-bangladesh-green hover:bg-dark-green text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-pistachio hover:bg-stone text-dark-green px-6 py-3 rounded-lg font-medium transition-colors duration-200;
+  }
+
+  .hero-btn-primary {
+    @apply bg-white hover:bg-anti-flash-white text-dark-green px-8 py-4 rounded-full font-medium transition-all duration-200 transform hover:scale-105 shadow-lg;
+  }
+  
+  .hero-btn-secondary {
+    @apply border-2 border-bangladesh-green hover:bg-bangladesh-green text-white px-8 py-4 rounded-full font-medium transition-all duration-200 transform hover:scale-105;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
 }
