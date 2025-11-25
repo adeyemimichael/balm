@@ -39,12 +39,14 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="lg:col-span-1 space-y-6">
               <Link href="/" className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-gradient-to-br from-bangladesh-green to-mountain-meadow rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">B</span>
-                </div>
-                <span className="text-2xl font-display font-semibold">
+                <img 
+                  src="/Balm City Trademark.png" 
+                  alt="Balm City Trademark Logo" 
+                  className="h-12 w-auto"
+                />
+                {/* <span className="text-2xl font-adomania font-semibold">
                   Balmcity
-                </span>
+                </span> */}
               </Link>
               
               <p className="text-stone leading-relaxed">
@@ -142,7 +144,7 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-bangladesh-green border border-mountain-meadow rounded-lg focus:ring-2 focus:ring-caribbean-green focus:border-transparent transition-colors text-white placeholder-stone"
+                className="flex-1 px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-white placeholder-neutral-400"
               />
               <button className="btn-primary whitespace-nowrap">
                 Subscribe

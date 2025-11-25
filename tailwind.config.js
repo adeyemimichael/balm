@@ -31,10 +31,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        fontFamily: {
-        custom: ['MyCustomFont', 'sans-serif'],
-      },
-        display: ['Playfair Display', 'serif'],
+        'adomania': ['Adomania', 'Inter', 'system-ui', 'sans-serif'],
+        'display': ['Adomania', 'Playfair Display', 'serif'],
+        'sans': ['Adomania', 'Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

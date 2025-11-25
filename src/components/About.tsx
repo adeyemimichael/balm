@@ -1,3 +1,8 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import AnimatedSection from './AnimatedSection';
+
 const About = () => {
   const values = [
     {
@@ -29,12 +34,41 @@ const About = () => {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94] as const
+      }
+    }
+  };
+
   return (
     <section id="about" className="section-padding bg-anti-flash-white">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <motion.div 
+          className="grid lg:grid-cols-2 gap-16 items-center"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {/* Content */}
-          <div className="space-y-8">
+          <motion.div className="space-y-8" variants={itemVariants}>
             <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-display font-bold text-dark-green">
                 About Balmcity
@@ -54,24 +88,49 @@ const About = () => {
             {/* Values */}
             <div className="space-y-6">
               {values.map((value, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-pistachio rounded-lg flex items-center justify-center text-bangladesh-green">
+                <motion.div 
+                  key={index} 
+                  className="flex items-start space-x-4"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2, duration: 0.5 }}
+                  whileHover={{ x: 10, transition: { duration: 0.2 } }}
+                >
+                  <motion.div 
+                    className="flex-shrink-0 w-12 h-12 bg-pistachio rounded-lg flex items-center justify-center text-bangladesh-green"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     {value.icon}
-                  </div>
+                  </motion.div>
                   <div>
                     <h3 className="font-semibold text-dark-green mb-1">{value.title}</h3>
                     <p className="text-balm-dark text-sm">{value.description}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Visual */}
-          <div className="relative">
-            <div className="grid grid-cols-2 gap-4">
+          <motion.div 
+            className="relative"
+            variants={itemVariants}
+          >
+            <motion.div 
+              className="grid grid-cols-2 gap-4"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
               <div className="space-y-4">
-                <div className="aspect-square bg-gradient-to-br from-pistachio to-stone rounded-2xl p-6 flex items-center justify-center">
+                <motion.div 
+                  className="aspect-square bg-gradient-to-br from-pistachio to-stone rounded-2xl p-6 flex items-center justify-center"
+                  whileHover={{ scale: 1.05, rotate: 2 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <div className="text-center">
                     <div className="w-16 h-16 bg-bangladesh-green rounded-xl mx-auto mb-3 flex items-center justify-center">
                       <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,8 +139,12 @@ const About = () => {
                     </div>
                     <p className="text-sm font-medium text-bangladesh-green">Innovation</p>
                   </div>
-                </div>
-                <div className="aspect-[4/3] bg-gradient-to-br from-caribbean-green/20 to-mountain-meadow/20 rounded-2xl p-6 flex items-center justify-center">
+                </motion.div>
+                <motion.div 
+                  className="aspect-[4/3] bg-gradient-to-br from-caribbean-green/20 to-mountain-meadow/20 rounded-2xl p-6 flex items-center justify-center"
+                  whileHover={{ scale: 1.05, rotate: -2 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <div className="text-center">
                     <div className="w-12 h-12 bg-mountain-meadow rounded-lg mx-auto mb-2 flex items-center justify-center">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,10 +153,14 @@ const About = () => {
                     </div>
                     <p className="text-xs font-medium text-mountain-meadow">Passion</p>
                   </div>
-                </div>
+                </motion.div>
               </div>
               <div className="space-y-4 pt-8">
-                <div className="aspect-[4/3] bg-gradient-to-br from-stone to-pistachio rounded-2xl p-6 flex items-center justify-center">
+                <motion.div 
+                  className="aspect-[4/3] bg-gradient-to-br from-stone to-pistachio rounded-2xl p-6 flex items-center justify-center"
+                  whileHover={{ scale: 1.05, rotate: 2 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <div className="text-center">
                     <div className="w-12 h-12 bg-dark-green rounded-lg mx-auto mb-2 flex items-center justify-center">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,8 +169,12 @@ const About = () => {
                     </div>
                     <p className="text-xs font-medium text-dark-green">Quality</p>
                   </div>
-                </div>
-                <div className="aspect-square bg-gradient-to-br from-mountain-meadow/20 to-caribbean-green/20 rounded-2xl p-6 flex items-center justify-center">
+                </motion.div>
+                <motion.div 
+                  className="aspect-square bg-gradient-to-br from-mountain-meadow/20 to-caribbean-green/20 rounded-2xl p-6 flex items-center justify-center"
+                  whileHover={{ scale: 1.05, rotate: -2 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-bangladesh-green to-mountain-meadow rounded-xl mx-auto mb-3 flex items-center justify-center">
                       <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -112,11 +183,11 @@ const About = () => {
                     </div>
                     <p className="text-sm font-medium text-dark-green">Growth</p>
                   </div>
-                </div>
+                </motion.div>
               </div>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
