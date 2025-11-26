@@ -9,38 +9,38 @@ const Testimonials = () => {
     {
       id: 1,
       name: "Sarah Johnson",
-      role: "CEO, EcoFlow",
-      company: "EcoFlow Energy",
-      content: "Balmcity transformed our brand identity completely. Their creative vision and attention to detail exceeded our expectations. The new branding has significantly improved our market presence.",
+      role: "AI Engineer",
+      company: "Google",
+      content: "Balm City didn't just teach me to code—they taught me to think like an innovator. The blend of technical skills and soft skills prepared me for leadership roles I never imagined possible.",
       rating: 5,
-      avatar: "bg-gradient-to-br from-green-400 to-green-600"
+      avatar: "bg-gradient-to-br from-bangladesh-green to-mountain-meadow"
     },
     {
       id: 2,
       name: "Michael Chen",
-      role: "Founder",
-      company: "TechStart Solutions",
-      content: "Working with Balmcity was an absolute pleasure. They understood our vision perfectly and delivered designs that truly represent our brand values. Highly recommended!",
+      role: "Founder & CEO",
+      company: "EduTech Innovations",
+      content: "The entrepreneurship program at Balm City gave me the confidence and skills to launch my startup. We've now raised $5M and are impacting education globally. The network is incredible.",
       rating: 5,
-      avatar: "bg-gradient-to-br from-blue-400 to-blue-600"
+      avatar: "bg-gradient-to-br from-dark-green to-bangladesh-green"
     },
     {
       id: 3,
       name: "Emily Rodriguez",
-      role: "Marketing Director",
-      company: "Artisan Coffee Co.",
-      content: "The packaging design Balmcity created for us has been a game-changer. Our products now stand out on shelves, and customer feedback has been overwhelmingly positive.",
+      role: "Creative Director",
+      company: "Netflix",
+      content: "Balm City's media program is unmatched. They taught me storytelling, brand strategy, and global communication. I went from student to leading creative campaigns for major streaming platforms.",
       rating: 5,
-      avatar: "bg-gradient-to-br from-amber-400 to-orange-600"
+      avatar: "bg-gradient-to-br from-caribbean-green to-mountain-meadow"
     },
     {
       id: 4,
       name: "David Thompson",
-      role: "Product Manager",
-      company: "Mindful Apps",
-      content: "Balmcity's UI/UX design for our wellness app is simply outstanding. The user experience is intuitive and beautiful, leading to increased user engagement and retention.",
+      role: "Tech Consultant",
+      company: "McKinsey & Company",
+      content: "The global market focus at Balm City opened my eyes to opportunities worldwide. I now consult for Fortune 500 companies on digital transformation across three continents.",
       rating: 5,
-      avatar: "bg-gradient-to-br from-purple-400 to-purple-600"
+      avatar: "bg-gradient-to-br from-mountain-meadow to-caribbean-green"
     }
   ];
 
@@ -62,16 +62,16 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="section-padding bg-gradient-to-br from-primary-50 to-sage-50">
+    <section id="testimonials" className="section-padding bg-gradient-to-br from-pistachio/20 to-stone/10">
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-4">
-            What Our Clients Say
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-dark-green mb-4">
+            What Our Alumni Say
           </h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Don&apos;t just take our word for it. Here&apos;s what our clients have to say about 
-            working with Balmcity.
+          <p className="text-lg text-balm-dark max-w-2xl mx-auto">
+            Don&apos;t just take our word for it. Here&apos;s what our graduates have to say about 
+            their transformative experience at Balm City.
           </p>
         </div>
 
@@ -79,8 +79,8 @@ const Testimonials = () => {
         <div className="max-w-4xl mx-auto">
           <div className="relative bg-white rounded-3xl p-8 md:p-12 shadow-lg">
             {/* Quote Icon */}
-            <div className="absolute top-6 left-6 w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
-              <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
+            <div className="absolute top-6 left-6 w-12 h-12 bg-pistachio rounded-full flex items-center justify-center">
+              <svg className="w-6 h-6 text-bangladesh-green" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
               </svg>
             </div>
@@ -88,8 +88,8 @@ const Testimonials = () => {
             {/* Testimonial Content */}
             <div className="pt-8">
               <div className="mb-8">
-                <p className="text-lg md:text-xl text-neutral-700 leading-relaxed mb-6">
-                  "                  &ldquo;{testimonials[currentTestimonial].content}&rdquo;"
+                <p className="text-lg md:text-xl text-balm-dark leading-relaxed mb-6">
+                  &ldquo;{testimonials[currentTestimonial].content}&rdquo;
                 </p>
                 
                 {/* Rating */}
@@ -111,10 +111,10 @@ const Testimonials = () => {
                     </span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-neutral-900">
+                    <h4 className="font-semibold text-dark-green">
                       {testimonials[currentTestimonial].name}
                     </h4>
-                    <p className="text-neutral-600 text-sm">
+                    <p className="text-balm-dark text-sm">
                       {testimonials[currentTestimonial].role}, {testimonials[currentTestimonial].company}
                     </p>
                   </div>
@@ -124,17 +124,17 @@ const Testimonials = () => {
                 <div className="flex items-center space-x-2">
                   <button
                     onClick={prevTestimonial}
-                    className="w-10 h-10 bg-neutral-100 hover:bg-neutral-200 rounded-full flex items-center justify-center transition-colors duration-200"
+                    className="w-10 h-10 bg-stone/20 hover:bg-pistachio rounded-full flex items-center justify-center transition-colors duration-200"
                   >
-                    <svg className="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-balm-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
                   </button>
                   <button
                     onClick={nextTestimonial}
-                    className="w-10 h-10 bg-neutral-100 hover:bg-neutral-200 rounded-full flex items-center justify-center transition-colors duration-200"
+                    className="w-10 h-10 bg-stone/20 hover:bg-pistachio rounded-full flex items-center justify-center transition-colors duration-200"
                   >
-                    <svg className="w-5 h-5 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-balm-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </button>
@@ -150,7 +150,7 @@ const Testimonials = () => {
                 key={index}
                 onClick={() => setCurrentTestimonial(index)}
                 className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                  index === currentTestimonial ? 'bg-primary-600' : 'bg-neutral-300'
+                  index === currentTestimonial ? 'bg-bangladesh-green' : 'bg-stone'
                 }`}
               />
             ))}
@@ -158,22 +158,22 @@ const Testimonials = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-neutral-200">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-stone/20">
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">98%</div>
-            <div className="text-neutral-600 text-sm">Client Satisfaction</div>
+            <div className="text-3xl md:text-4xl font-bold text-bangladesh-green mb-2">94%</div>
+            <div className="text-balm-dark text-sm">Job Placement Rate</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">150+</div>
-            <div className="text-neutral-600 text-sm">Projects Delivered</div>
+            <div className="text-3xl md:text-4xl font-bold text-bangladesh-green mb-2">2,500+</div>
+            <div className="text-balm-dark text-sm">Graduates Worldwide</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">50+</div>
-            <div className="text-neutral-600 text-sm">Happy Clients</div>
+            <div className="text-3xl md:text-4xl font-bold text-bangladesh-green mb-2">150+</div>
+            <div className="text-balm-dark text-sm">Industry Partners</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">5+</div>
-            <div className="text-neutral-600 text-sm">Years Experience</div>
+            <div className="text-3xl md:text-4xl font-bold text-bangladesh-green mb-2">85%</div>
+            <div className="text-balm-dark text-sm">Alumni Satisfaction</div>
           </div>
         </div>
       </div>

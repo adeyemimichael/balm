@@ -4,29 +4,29 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
-    services: [
-      { name: 'Brand Identity', href: '#services' },
-      { name: 'Digital Illustrations', href: '#services' },
-      { name: 'Web Design', href: '#services' },
-      { name: 'Print Design', href: '#services' },
-      { name: 'Creative Consulting', href: '#services' },
-      { name: 'Motion Graphics', href: '#services' }
+    programs: [
+      { name: 'Computing & Technology', href: '#services' },
+      { name: 'Media & Communication', href: '#services' },
+      { name: 'Tech & Global Market', href: '#services' },
+      { name: 'Educational Technology', href: '#services' },
+      { name: 'Soft Skills Development', href: '#services' },
+      { name: 'Career Readiness', href: '#services' }
     ],
-    company: [
-      { name: 'About Us', href: '#about' },
-      { name: 'Our Work', href: '#portfolio' },
-      { name: 'Testimonials', href: '#testimonials' },
-      { name: 'Contact', href: '#contact' },
-      { name: 'Blog', href: '#' },
-      { name: 'Careers', href: '#' }
+    institution: [
+      { name: 'About Balm City', href: '#about' },
+      { name: 'Success Stories', href: '#portfolio' },
+      { name: 'Alumni Network', href: '#testimonials' },
+      { name: 'Admissions', href: '#contact' },
+      { name: 'Campus Life', href: '#' },
+      { name: 'Faculty', href: '#' }
     ],
     resources: [
-      { name: 'Design Process', href: '#' },
-      { name: 'Brand Guidelines', href: '#' },
-      { name: 'Case Studies', href: '#' },
-      { name: 'Design Tips', href: '#' },
-      { name: 'FAQ', href: '#' },
-      { name: 'Support', href: '#' }
+      { name: 'Learning Platform', href: '#' },
+      { name: 'Student Portal', href: '#' },
+      { name: 'Career Services', href: '#' },
+      { name: 'Industry Partnerships', href: '#' },
+      { name: 'Scholarships', href: '#' },
+      { name: 'Support Center', href: '#' }
     ]
   };
 
@@ -50,17 +50,17 @@ const Footer = () => {
               </Link>
               
               <p className="text-stone leading-relaxed">
-                A modern graphic design agency specializing in branding, digital illustrations, 
-                and creative visuals that bring your vision to life.
+                Empowering future tech leaders through innovative education that bridges 
+                technical excellence with human connection for global impact.
               </p>
 
               {/* Social Links */}
               <div className="flex space-x-4">
                 {[
-                  { name: 'Instagram', icon: 'I' },
-                  { name: 'Dribbble', icon: 'D' },
-                  { name: 'Behance', icon: 'B' },
-                  { name: 'LinkedIn', icon: 'L' }
+                  { name: 'LinkedIn', icon: 'L' },
+                  { name: 'Twitter', icon: 'T' },
+                  { name: 'YouTube', icon: 'Y' },
+                  { name: 'Instagram', icon: 'I' }
                 ].map((social) => (
                   <a
                     key={social.name}
@@ -76,11 +76,11 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Services */}
+            {/* Programs */}
             <div>
-              <h3 className="font-display font-semibold text-lg mb-6">Services</h3>
+              <h3 className="font-display font-semibold text-lg mb-6">Programs</h3>
               <ul className="space-y-3">
-                {footerLinks.services.map((link) => (
+                {footerLinks.programs.map((link) => (
                   <li key={link.name}>
                     <Link 
                       href={link.href}
@@ -93,11 +93,11 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Company */}
+            {/* Institution */}
             <div>
-              <h3 className="font-display font-semibold text-lg mb-6">Company</h3>
+              <h3 className="font-display font-semibold text-lg mb-6">Institution</h3>
               <ul className="space-y-3">
-                {footerLinks.company.map((link) => (
+                {footerLinks.institution.map((link) => (
                   <li key={link.name}>
                     <Link 
                       href={link.href}
@@ -134,10 +134,10 @@ const Footer = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="font-display font-semibold text-xl mb-2">
-                Stay Updated
+                Stay Connected
               </h3>
               <p className="text-stone">
-                Get design tips, industry insights, and project updates delivered to your inbox.
+                Get program updates, industry insights, and career opportunities delivered to your inbox.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -157,7 +157,7 @@ const Footer = () => {
         <div className="py-8 border-t border-neutral-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-neutral-400 text-sm">
-              <p>&copy; {currentYear} Balmcity. All rights reserved.</p>
+              <p>&copy; {currentYear} Balm City. All rights reserved.</p>
               <div className="flex space-x-6">
                 <Link href="#" className="hover:text-white transition-colors duration-200">
                   Privacy Policy
@@ -172,7 +172,7 @@ const Footer = () => {
             </div>
             
             <div className="text-neutral-400 text-sm">
-              Made with ❤️ by Balmcity
+              Empowering Future Leaders ✨
             </div>
           </div>
         </div>

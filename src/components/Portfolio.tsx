@@ -6,77 +6,77 @@ const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const filters = [
-    { id: 'all', label: 'All Work' },
-    { id: 'branding', label: 'Branding' },
-    { id: 'illustration', label: 'Illustration' },
-    { id: 'web', label: 'Web Design' },
-    { id: 'print', label: 'Print' }
+    { id: 'all', label: 'All Success Stories' },
+    { id: 'tech', label: 'Tech Graduates' },
+    { id: 'media', label: 'Media Alumni' },
+    { id: 'startup', label: 'Entrepreneurs' },
+    { id: 'global', label: 'Global Impact' }
   ];
 
   const projects = [
     {
       id: 1,
-      title: "EcoFlow Brand Identity",
-      category: "branding",
-      description: "Complete brand identity for sustainable energy company",
-      image: "bg-gradient-to-br from-green-100 to-green-200",
-      tags: ["Logo Design", "Brand Guidelines", "Packaging"]
+      title: "AI Startup Success",
+      category: "tech",
+      description: "Graduate launched AI-powered healthcare platform, raised $2M in seed funding",
+      image: "bg-gradient-to-br from-bangladesh-green/20 to-mountain-meadow/20",
+      tags: ["AI Development", "Healthcare Tech", "Startup Success"]
     },
     {
       id: 2,
-      title: "Digital Art Collection",
-      category: "illustration",
-      description: "Series of digital illustrations for tech startup",
-      image: "bg-gradient-to-br from-purple-100 to-pink-200",
-      tags: ["Digital Art", "Character Design", "Icons"]
+      title: "Digital Media Agency",
+      category: "media",
+      description: "Alumni founded award-winning digital storytelling agency serving Fortune 500 clients",
+      image: "bg-gradient-to-br from-pistachio/30 to-stone/20",
+      tags: ["Digital Storytelling", "Brand Strategy", "Creative Direction"]
     },
     {
       id: 3,
-      title: "Mindful App Interface",
-      category: "web",
-      description: "UI/UX design for meditation and wellness app",
-      image: "bg-gradient-to-br from-blue-100 to-indigo-200",
-      tags: ["UI Design", "UX Research", "Prototyping"]
+      title: "EdTech Innovation",
+      category: "startup",
+      description: "Student-built learning platform now used by 50,000+ learners globally",
+      image: "bg-gradient-to-br from-caribbean-green/20 to-bangladesh-green/20",
+      tags: ["EdTech", "Platform Development", "Global Reach"]
     },
     {
       id: 4,
-      title: "Artisan Coffee Packaging",
-      category: "print",
-      description: "Premium packaging design for specialty coffee brand",
-      image: "bg-gradient-to-br from-amber-100 to-orange-200",
-      tags: ["Packaging", "Print Design", "Typography"]
+      title: "Global Tech Consulting",
+      category: "global",
+      description: "Graduate leads international tech consulting firm with offices in 12 countries",
+      image: "bg-gradient-to-br from-dark-green/20 to-bangladesh-green/20",
+      tags: ["Global Business", "Tech Consulting", "Leadership"]
     },
     {
       id: 5,
-      title: "TechStart Logo Suite",
-      category: "branding",
-      description: "Modern logo and visual identity system",
-      image: "bg-gradient-to-br from-primary-100 to-primary-200",
-      tags: ["Logo Design", "Visual Identity", "Brand Strategy"]
+      title: "Social Impact App",
+      category: "tech",
+      description: "Mobile app connecting communities for social good, 1M+ downloads",
+      image: "bg-gradient-to-br from-mountain-meadow/20 to-caribbean-green/20",
+      tags: ["Mobile Development", "Social Impact", "Community Building"]
     },
     {
       id: 6,
-      title: "Nature Illustration Series",
-      category: "illustration",
-      description: "Hand-drawn botanical illustrations for wellness brand",
-      image: "bg-gradient-to-br from-sage-100 to-sage-200",
-      tags: ["Botanical Art", "Hand Drawing", "Nature"]
+      title: "Content Creator Success",
+      category: "media",
+      description: "Graduate built multimedia brand with 500K+ followers across platforms",
+      image: "bg-gradient-to-br from-stone/20 to-pistachio/30",
+      tags: ["Content Creation", "Personal Branding", "Multimedia"]
     },
     {
       id: 7,
-      title: "E-commerce Platform",
-      category: "web",
-      description: "Complete e-commerce website design and development",
-      image: "bg-gradient-to-br from-rose-100 to-pink-200",
-      tags: ["E-commerce", "Responsive Design", "User Experience"]
+      title: "Fintech Innovation",
+      category: "startup",
+      description: "Revolutionary payment solution serving emerging markets, $10M+ processed",
+      image: "bg-gradient-to-br from-bangladesh-green/20 to-dark-green/20",
+      tags: ["Fintech", "Emerging Markets", "Payment Solutions"]
     },
     {
       id: 8,
-      title: "Annual Report Design",
-      category: "print",
-      description: "Corporate annual report with infographics",
-      image: "bg-gradient-to-br from-neutral-100 to-neutral-200",
-      tags: ["Editorial Design", "Infographics", "Corporate"]
+      title: "Remote Learning Pioneer",
+      category: "global",
+      description: "Created accessible learning solutions for underserved communities worldwide",
+      image: "bg-gradient-to-br from-caribbean-green/20 to-mountain-meadow/20",
+      tags: ["Remote Learning", "Accessibility", "Global Education"]
     }
   ];
 
@@ -89,12 +89,12 @@ const Portfolio = () => {
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-4">
-            Our Portfolio
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-dark-green mb-4">
+            Student Success Stories
           </h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto mb-8">
-            Explore our recent work and see how we&apos;ve helped brands tell their stories 
-            through compelling visual design.
+          <p className="text-lg text-balm-dark max-w-2xl mx-auto mb-8">
+            Discover how our graduates are making their mark in tech, media, and global markets. 
+            These are the innovators, creators, and leaders we&apos;re proud to call alumni.
           </p>
 
           {/* Filter Buttons */}
@@ -105,8 +105,8 @@ const Portfolio = () => {
                 onClick={() => setActiveFilter(filter.id)}
                 className={`px-6 py-2 rounded-full font-medium transition-colors duration-200 ${
                   activeFilter === filter.id
-                    ? 'bg-primary-600 text-white'
-                    : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
+                    ? 'bg-bangladesh-green text-white'
+                    : 'bg-stone/20 text-balm-dark hover:bg-pistachio'
                 }`}
               >
                 {filter.label}
@@ -139,17 +139,17 @@ const Portfolio = () => {
               </div>
 
               <div className="space-y-3">
-                <h3 className="text-xl font-display font-semibold text-neutral-900 group-hover:text-primary-600 transition-colors duration-200">
+                <h3 className="text-xl font-display font-semibold text-dark-green group-hover:text-bangladesh-green transition-colors duration-200">
                   {project.title}
                 </h3>
-                <p className="text-neutral-600 text-sm leading-relaxed">
+                <p className="text-balm-dark text-sm leading-relaxed">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, index) => (
                     <span 
                       key={index}
-                      className="px-3 py-1 bg-neutral-100 text-neutral-600 text-xs rounded-full"
+                      className="px-3 py-1 bg-pistachio text-bangladesh-green text-xs rounded-full"
                     >
                       {tag}
                     </span>
@@ -162,11 +162,11 @@ const Portfolio = () => {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <p className="text-neutral-600 mb-6">
-            Like what you see? Let&apos;s create something amazing together.
+          <p className="text-balm-dark mb-6">
+            Ready to write your own success story? Join our community of innovators.
           </p>
           <a href="#contact" className="btn-primary">
-            Start Your Project
+            Apply Now
           </a>
         </div>
       </div>

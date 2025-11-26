@@ -1,19 +1,21 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
+interface Service {
+  title: string;
+  description: string;
+  features: string[];
+  comingSoon?: boolean;
+  icon: React.ReactNode;
+}
+
 const Services = () => {
   const services = [
     {
-      title: "Brand Identity",
-      description: "Complete brand identity packages including logos, color palettes, typography, and brand guidelines.",
-      features: ["Logo Design", "Brand Guidelines", "Color Palette", "Typography Selection"],
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
-        </svg>
-      )
-    },
-    {
-      title: "Digital Illustrations",
-      description: "Custom digital artwork and illustrations that capture your brand's personality and message.",
-      features: ["Custom Artwork", "Character Design", "Icon Sets", "Infographics"],
+      title: "Media & Communication",
+      description: "Build storytelling, branding, digital media production, and global communication expertise.",
+      features: ["Digital Storytelling", "Brand Strategy", "Media Production", "Global Communication", "Design Agency"],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
@@ -21,103 +23,205 @@ const Services = () => {
       )
     },
     {
-      title: "Web Design",
-      description: "Modern, responsive web designs that provide exceptional user experiences across all devices.",
-      features: ["UI/UX Design", "Responsive Layout", "Prototyping", "User Testing"],
+      title: "Tech & Global Market",
+      description: "Learn how to scale ideas and businesses in a globalized economy with market insights.",
+      features: ["Market Analysis", "Business Scaling", "Global Strategy", "Entrepreneurship"],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       )
     },
     {
-      title: "Print Design",
-      description: "Professional print materials including brochures, business cards, posters, and packaging design.",
-      features: ["Business Cards", "Brochures", "Packaging", "Marketing Materials"],
+      title: "Educational Technology",
+      description: "Leverage technology to make learning effective, accessible, and engaging for all students.",
+      features: ["Learning Platforms", "EdTech Tools", "Digital Pedagogy", "Accessibility Design"],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
         </svg>
       )
     },
     {
-      title: "Creative Consulting",
-      description: "Strategic creative direction and consulting to help your brand make the right visual decisions.",
-      features: ["Brand Strategy", "Creative Direction", "Market Analysis", "Trend Research"],
+      title: "Soft Skills Development",
+      description: "Develop essential communication, collaboration, and leadership skills for professional success.",
+      features: ["Communication Skills", "Team Collaboration", "Leadership Training", "Emotional Intelligence"],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       )
     },
     {
-      title: "Motion Graphics",
-      description: "Engaging animated graphics and motion design for digital platforms and presentations.",
-      features: ["Animation", "Video Graphics", "Logo Animation", "Presentation Design"],
+      title: "Career Readiness",
+      description: "Comprehensive career preparation including portfolio development and industry connections.",
+      features: ["Portfolio Building", "Industry Networking", "Interview Prep", "Career Guidance"],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293H15M9 10v4a2 2 0 002 2h2a2 2 0 002-2v-4M9 10V9a2 2 0 012-2h2a2 2 0 012 2v1" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6" />
+        </svg>
+      )
+    },
+    {
+      title: "Computing & Technology",
+      description: "Master programming, AI, software development, and cutting-edge tech skills for the digital future.",
+      features: ["Programming Languages", "AI & Machine Learning", "Software Development", "Tech Innovation"],
+      comingSoon: true,
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
         </svg>
       )
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94] as const
+      }
+    }
+  };
+
   return (
-    <section id="services" className="section-padding bg-gradient-to-br from-sage-50 to-neutral-50">
+    <section id="services" className="section-padding bg-anti-flash-white">
       <div className="container-custom">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-4">
-            Our Services
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-dark-green mb-4">
+            Our Core Programs
           </h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            We offer comprehensive design services to help your brand stand out 
-            and connect with your audience across all touchpoints.
+          <p className="text-lg text-balm-dark max-w-2xl mx-auto">
+            Four integrated pillars that anchor Balm City's transformative educational experience, 
+            combining technical expertise with essential human skills.
           </p>
-        </div>
+        </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {services.map((service, index) => (
-            <div 
+            <motion.div 
               key={index} 
-              className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 border border-neutral-100"
+              className={`bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-stone/20 relative ${
+                service.comingSoon ? 'opacity-75' : ''
+              }`}
+              variants={itemVariants}
+              whileHover={{ y: -5, scale: 1.02 }}
+              transition={{ duration: 0.3 }}
             >
-              <div className="flex items-center justify-center w-16 h-16 bg-primary-100 rounded-xl mb-6 text-primary-600">
+              {/* Coming Soon Badge */}
+              {service.comingSoon && (
+                <motion.div
+                  className="absolute -top-3 -right-3 z-10"
+                  initial={{ scale: 0, rotate: -12 }}
+                  animate={{ scale: 1, rotate: -12 }}
+                  transition={{ delay: 0.5, duration: 0.5, type: "spring" }}
+                >
+                  <span className="bg-gradient-to-r from-caribbean-green to-bangladesh-green text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                    Coming Soon
+                  </span>
+                </motion.div>
+              )}
+
+              <motion.div 
+                className={`flex items-center justify-center w-16 h-16 rounded-xl mb-6 ${
+                  service.comingSoon 
+                    ? 'bg-stone/30 text-balm-dark' 
+                    : 'bg-pistachio text-bangladesh-green'
+                }`}
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ duration: 0.2 }}
+              >
                 {service.icon}
-              </div>
+              </motion.div>
               
-              <h3 className="text-xl font-display font-semibold text-neutral-900 mb-3">
+              <h3 className={`text-xl font-display font-semibold mb-3 ${
+                service.comingSoon ? 'text-balm-dark' : 'text-dark-green'
+              }`}>
                 {service.title}
               </h3>
               
-              <p className="text-neutral-600 mb-6 leading-relaxed">
+              <p className="text-balm-dark mb-6 leading-relaxed">
                 {service.description}
               </p>
               
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-sm text-neutral-600">
-                    <svg className="w-4 h-4 text-primary-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <motion.li 
+                    key={featureIndex} 
+                    className={`flex items-center text-sm ${
+                      service.comingSoon ? 'text-balm-dark/70' : 'text-balm-dark'
+                    }`}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: featureIndex * 0.1, duration: 0.3 }}
+                  >
+                    <svg 
+                      className={`w-4 h-4 mr-3 flex-shrink-0 ${
+                        service.comingSoon ? 'text-balm-dark/50' : 'text-bangladesh-green'
+                      }`} 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     {feature}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
-          <p className="text-neutral-600 mb-6">
-            Ready to bring your vision to life?
+        <motion.div 
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <p className="text-balm-dark mb-6">
+            Ready to transform your future with cutting-edge education?
           </p>
-          <a href="#contact" className="btn-primary">
-            Start Your Project
-          </a>
-        </div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <a href="#contact" className="btn-primary">
+              Start Your Journey
+            </a>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
