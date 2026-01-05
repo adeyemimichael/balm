@@ -18,7 +18,7 @@ const pageVariants = {
 
 const pageTransition = {
   duration: 0.6,
-  ease: "easeInOut"
+  ease: [0.25, 0.46, 0.45, 0.94] as const
 };
 
 const sectionVariants = {
@@ -28,7 +28,7 @@ const sectionVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: "easeOut"
+      ease: [0.25, 0.46, 0.45, 0.94] as const
     }
   }
 };

@@ -339,7 +339,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen bg-green-600 relative overflow-hidden">
+    <section id="home" className="min-h-screen bg-dark-green relative overflow-hidden">
       {/* Noise Texture Overlay */}
       <motion.div 
         className="absolute inset-0 opacity-15 mix-blend-soft-light pointer-events-none"
